@@ -8,7 +8,7 @@ namespace BookStore.Domain.Interfaces
         Task<Book> GetByIdAsync(Guid id);
         Task AddBookAsync(Book book);
         Task UpdateBookAsync(Book book);
-        Task DeleteBookAsync(Guid id);
+        Task DeleteBookAsync(Book book);
         Task<IEnumerable<Book>> GetByAuthorAsync(string author);
         Task<IEnumerable<Book>> GetByCategoryAsync(string category);
         Task SaveChanges();

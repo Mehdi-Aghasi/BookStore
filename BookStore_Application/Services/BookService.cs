@@ -44,7 +44,11 @@ namespace BookStore.Application.Services
 
         public async Task DeleteAsync(Guid id)
         {
-            await _bookRepository.DeleteBookAsync(id);
+            var book = await _bookRepository.GetByIdAsync(id);
+            if (book == null)
+                throw new KeyNotFoundException($"Book with ID {id} not found.");
+
+            await _bookRepository.DeleteBookAsync(book);
         }
 
         public async Task<IEnumerable<BookDto>> GetAllAsync()
