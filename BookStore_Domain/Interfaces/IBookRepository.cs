@@ -11,6 +11,5 @@ namespace BookStore.Domain.Interfaces
         Task DeleteBookAsync(Book book);
         Task<IEnumerable<Book>> GetByAuthorAsync(string author);
         Task<IEnumerable<Book>> GetByCategoryAsync(string category);
-        Task SaveChanges();
     }
 }
