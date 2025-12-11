@@ -1,6 +1,6 @@
 ﻿namespace BookStore.Domain.Common
 {
-    public class BaseEntity
+    public abstract class BaseEntity
     {
         public Guid Id { get; set; }= Guid.NewGuid();
         public DateTime CreateAt { get; set; }=DateTime.UtcNow;
